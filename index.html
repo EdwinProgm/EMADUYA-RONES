@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMADUYA ROÑES EIRL</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="header-container">
+    <div class="top-bar">
+      <div class="container">
+        <div class="socials">
+          <a href="https://www.facebook.com/revestmicrocemento/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/emaduya/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/emaduyaro%C3%B1eseirl/?originalSubdomain=pe" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/51997052649?text=Hola" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <button class="play-button" id="play-video">
+            <i class="fas fa-play"></i>
+          </button>        
+        </div>
+        <div class="utilities">
+          <div class="search-container">
+            <input type="text" placeholder="Buscar...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" />
+            <label for="theme-switch" class="switch">
+              <span class="sun"><i class="fas fa-sun"></i></span>
+              <span class="moon"><i class="fas fa-moon"></i></span>
+              <span class="slider"></span>
+            </label>
+          </div>        
+        </div>
+      </div>
+    </div>
+
+    <header class="main-header" id="main-header">
+      <div class="container">
+        <div class="logo-container">
+          <div class="logo">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5DjfcXERMcTsiY6dCmi3w1hS85SPtlWFqTrhqqrBh0QDwzdpFg6EpkPgzByabD6vILUXfR_nAx4PqdmyEbLAZkvholjvK9iVPPEqmfl0c1-skm56roMwjZtoe_m0cRvFtHHqeHqHVXdc/s1600/LOGO+3-a1.jpg" alt="EMADUYA ROÑES EIRL">
+          </div>
+          <div class="logo-text">
+            <h1>EMADUYA ROÑES EIRL</h1>
+            <p>Microcemento. Graniplast. Stucco Veneciano. Revestimientos.</p>
+          </div>
+        </div>
+        
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+          <ul>
+            <li><a href="index.html" data-page="home" id="nav-home" class="active">INICIO</a></li>
+            <li class="dropdown">
+              <a href="#" data-page="trabajos" id="nav-trabajos">NUESTROS TRABAJOS  <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="microcemento-clasico.html"  data-page="microcemento-clasico" id="nav-microcemento-clasico">Microcemento Clasico</a></li>
+                <li><a href="microcemento-oxido.html" data-page="microcemento-oxido" id="nav-microcemento-oxido">Microcemento Oxido</a></li>
+                <li><a href="graniplast.html" data-page="graniplast" id="nav-graniplast">Graniplast </a></li>
+                <li><a href="estuco-veneciano.html" data-page="estuco-veneciano" id="nav-estuco-veneciano">Estuco Veneciano</a></li>
+                <li><a href="texturart.html" data-page="texturart" id="nav-texturart">TexturArt</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" data-page="productos" id="nav-productos">PRODUCTOS <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="grout.html" data-page="grout" id="nav-grout">Grout</a></li>
+                <li><a href="/microcemento-clasico.html" data-page="microcemento" id="nav-microcemento">Microcemento</a></li>
+                <li><a href="graniplast-decorativo.html" data-page="graniplast-decorativo" id="nav-graniplast-decorativo">Graniplast Decorativo</a></li>
+                <li><a href="marmorino.html" data-page="marmorino" id="nav-marmorino">Marmorino</a></li>
+                <li><a href="selladores.html" data-page="selladores" id="nav-selladores">Selladores</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" data-page="servicios" id="nav-servicios">SERVICIOS <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="revestimientos.html" data-page="revestimientos" id="nav-revestimientos">Revestimientos Decorativos</a></li>
+                <li><a href="carpinteria.html" data-page="carpinteria" id="nav-carpinteria">Carpinteria y Ebanisteria</a></li>
+                <li><a href="electricas.html" data-page="electricas" id="nav-electricas">Instalaciones Electricas </a></li>
+                <li><a href="estructuras.html" data-page="estructuras" id="nav-estructuras">Estructuras Metalicas</a></li>
+              </ul>
+            </li>
+            <li><a href="noticias.html" data-page="noticias" id="nav-noticias">NOTICIAS</a></li>
+            <li><a href="contacto.html" data-page="contacto" id="nav-contacto">CONTACTANOS</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+    <main id="content">
+      <section class="hero-slider">
+        <div class="slides">
+          <div class="slide active">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLVsS3ywsbs_o4jdGzOQXXlipo7AepDCeukUpKwCohbB3KufI6zsVLXR097T-skdApcfuyyITr7WmZUSHGkIliQaFjrnpVoYHe3kVvPzZ2RXDqebo3TkWYxwkQ3XanNl3PKf7nOwFtPms/s1600/microcemento047.jpg" alt="Microcemento aplicado en interiores">
+            <div class="slide-content">
+              <h2>Soluciones decorativas de alta calidad</h2>
+              <p>Transformamos espacios con revestimientos únicos y duraderos</p>
+              <a href="#" class="btn">Descubrir más</a>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlB8co4p2b7ssn57lvIWlKXJUNgJzVGoRtKmhU8TbGpVO8FlAXAm6q7xcb-5Fizce5LmqiIxVJGlWoN1poSV3vZEfHbGy3Xvt03uWBBcsGxG-mmrh_Lrr32PA2yEH1inc2Acno2-VzS7M/s1600/microcementooxido01.jpg" alt="Acabados decorativos">
+            <div class="slide-content">
+              <h2>Acabados decorativos exclusivos</h2>
+              <p>Elegancia y durabilidad para cada proyecto</p>
+              <a href="#" class="btn">Ver catálogo</a>
+            </div>
+          </div>
+        </div>
+        <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-flag"></i>
+            </div>
+            <h3>Misión</h3>
+            <p>Proveer revestimientos decorativos de alta gama y soluciones integrales, facilitando a nuestros clientes la transformación de sus espacios con calidad, estética y la mejor asesoría disponible.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Visión</h3>
+            <p>Consolidarnos como el referente principal en la comercialización de revestimientos decorativos de alta gama en el distrito de Comas, distinguiéndonos por la calidad de nuestros productos y servicio, y proyectando nuestro crecimiento hacia otros mercados en Lima.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Objetivo</h3>
+            <p>Buscamos ampliar la oferta revestimientos decorativos de alta gama para satisfacer la demanda y diversificar su catálogo. Además, prioriza la atención personalizada y el asesoramiento especializado para garantizar la satisfacción y fidelización de sus clientes. Asimismo, pretende fortalecer su competitividad e incrementar sus ventas mediante una mayor presencia en el mercado local.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+  <div id="footer-container">
+    <div id="video-modal" class="video-modal">
+      <div class="video-content">
+        <span class="close-video">&times;</span>
+        <iframe id="youtube-player" src="/placeholder.svg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="chatbot-widget" id="chatbot-widget">
+      <div class="chatbot-trigger" id="chatbot-trigger">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Chatbot" />
+        <span class="chatbot-tooltip">¡Hola! Estoy aquí</span>
+      </div>
+      <div class="chatbot-window" id="chatbot-window">
+        <div class="chatbot-header">
+          <span>Asistente Virtual</span>
+          <button id="chatbot-close">&times;</button>
+        </div>
+        <div class="chatbot-body">
+          <div class="chat-message bot">Hola 👋 ¿En qué puedo ayudarte?</div>
+        </div>
+        <div class="chatbot-footer">
+          <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje...">
+          <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-loader">
+      <div class="loader-spinner"></div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5DjfcXERMcTsiY6dCmi3w1hS85SPtlWFqTrhqqrBh0QDwzdpFg6EpkPgzByabD6vILUXfR_nAx4PqdmyEbLAZkvholjvK9iVPPEqmfl0c1-skm56roMwjZtoe_m0cRvFtHHqeHqHVXdc/s1600/LOGO+3-a1.jpg" alt="EMADUYA ROÑES EIRL">
+            <p>Especialistas en revestimientos decorativos</p>
+          </div>
+          <div class="footer-links">
+            <h4>Enlaces rápidos</h4>
+            <ul>
+              <li><a href="index.html" data-page="home">Inicio</a></li>
+              <li><a href="productos.html" data-page="productos">Productos</a></li>
+              <li><a href="servicios.html" data-page="servicios">Servicios</a></li>
+              <li><a href="contacto.html" data-page="contacto">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contacto</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Av. Tupac Amaru Nro. 060 P.J. Manco Inca (Alt.Km.7.5 D Av.T.Amaru-Paradero 50)</p>
+            <p><i class="fas fa-phone"></i> +51 997 052 649</p>
+            <p><i class="fas fa-envelope"></i> emaduya@gmail.com</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 EMADUYA ROÑES EIRL. Todos los derechos reservados.</p>
+          <p>&copy; 2023 EMADUYA ROÑES EIRL. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+      initHeaderEvents();
+
+      initFooterEvents();
+    });
+    
+ 
+    function initHeaderEvents() {
+
+      const menuToggle = document.getElementById("menu-toggle");
+      const mainNav = document.querySelector(".main-nav");
+
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener("click", () => {
+          mainNav.classList.toggle("active");
+          const icon = menuToggle.querySelector("i");
+          if (icon) {
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-times");
+          }
+        });
+      }
+
+  
+      const dropdowns = document.querySelectorAll(".dropdown");
+
+      dropdowns.forEach((dropdown) => {
+        const link = dropdown.querySelector("a");
+        if (link) {
+          link.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+
+              dropdown.classList.toggle("active");
+
+              dropdowns.forEach((otherDropdown) => {
+                if (otherDropdown !== dropdown && otherDropdown.classList.contains("active")) {
+                  otherDropdown.classList.remove("active");
+                }
+              });
+            }
+          });
+        }
+      });
+ 
+      initTheme();
+      
+
+      initStickyHeader();
+    }
+    
+
+    function initStickyHeader() {
+      const header = document.getElementById('main-header');
+      if (header) {
+        let lastScrollTop = 0;
+        
+        function handleScroll() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          if (scrollTop > 100) {
+            header.classList.add('sticky');
+          } else {
+            header.classList.remove('sticky');
+          }
+          
+          lastScrollTop = scrollTop;
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+      }
+    }
+    
+  
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const themeSwitch = document.getElementById('theme-switch');
+      
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (themeSwitch) themeSwitch.checked = true;
+      }
+      
+      if (themeSwitch) {
+        themeSwitch.addEventListener('change', () => {
+          if (themeSwitch.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      }
+    }
+    
+    function initFooterEvents() {
+      const playVideo = document.getElementById("play-video");
+      if (playVideo) {
+        playVideo.addEventListener("click", function () {
+          const modal = document.getElementById("video-modal");
+          const iframe = document.getElementById("youtube-player");
+          if (iframe && modal) {
+            iframe.src = "https://www.youtube.com/embed/40XCopZ-5DM?autoplay=1";
+            modal.style.display = "block";
+          }
+        });
+      }
+
+      const closeVideo = document.querySelector(".close-video");
+      if (closeVideo) {
+        closeVideo.addEventListener("click", function () {
+          const modal = document.getElementById("video-modal");
+          const iframe = document.getElementById("youtube-player");
+          if (iframe && modal) {
+            iframe.src = "";
+            modal.style.display = "none";
+          }
+        });
+      }
+
+      window.addEventListener("click", function (e) {
+        const modal = document.getElementById("video-modal");
+        if (modal && e.target === modal) {
+          const closeBtn = document.querySelector(".close-video");
+          if (closeBtn) {
+            closeBtn.click();
+          }
+        }
+      });
+
+
+      const chatbotTrigger = document.getElementById("chatbot-trigger");
+      const chatbotWindow = document.getElementById("chatbot-window");
+      const chatbotClose = document.getElementById("chatbot-close");
+      const chatbotSend = document.getElementById("chatbot-send");
+      const chatbotInput = document.getElementById("chatbot-input");
+      const chatbotBody = document.querySelector(".chatbot-body");
+
+      if (chatbotTrigger && chatbotWindow) {
+        chatbotTrigger.addEventListener("click", () => {
+          chatbotWindow.style.display = "flex";
+        });
+      }
+
+      if (chatbotClose && chatbotWindow) {
+        chatbotClose.addEventListener("click", () => {
+          chatbotWindow.style.display = "none";
+        });
+      }
+
+      if (chatbotSend && chatbotInput && chatbotBody) {
+        chatbotSend.addEventListener("click", sendMessage);
+        chatbotInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") sendMessage();
+        });
+
+        function sendMessage() {
+          const message = chatbotInput.value.trim();
+          if (message !== "") {
+            const userMsg = document.createElement("div");
+            userMsg.className = "chat-message";
+            userMsg.textContent = message;
+            chatbotBody.appendChild(userMsg);
+
+            setTimeout(() => {
+              const botMsg = document.createElement("div");
+              botMsg.className = "chat-message bot";
+              botMsg.textContent = "Gracias por tu mensaje, en breve te responderemos.";
+              chatbotBody.appendChild(botMsg);
+              chatbotBody.scrollTop = chatbotBody.scrollHeight;
+            }, 500);
+
+            chatbotInput.value = "";
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
