@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme()
   initSlider()
   initMobileMenu()
-  initDropdowns()
   initStickyHeader()
   initVideoModal()
   initChatbot()
@@ -135,39 +134,79 @@ function initSlider() {
 
 function initMobileMenu() {
   const menuToggle = document.getElementById("menu-toggle")
-  const mainNav = document.getElementById("main-nav")
+  const mainNav = document.querySelector(".main-nav")
+  const dropdowns = document.querySelectorAll(".dropdown")
 
   if (menuToggle && mainNav) {
-    // Asegurarse de que el menú esté inicialmente oculto en móvil
-    if (window.innerWidth <= 768) {
-      mainNav.style.display = "none"
-    }
-
     menuToggle.addEventListener("click", () => {
-      // Cambiar entre mostrar y ocultar el menú
       if (mainNav.style.display === "none" || mainNav.style.display === "") {
         mainNav.style.display = "block"
         mainNav.classList.add("active")
+        const icon = menuToggle.querySelector("i")
+        if (icon) {
+          icon.classList.remove("fa-bars")
+          icon.classList.add("fa-times")
+        }
       } else {
         mainNav.style.display = "none"
         mainNav.classList.remove("active")
-      }
-
-      // Cambiar el ícono
-      const icon = menuToggle.querySelector("i")
-      if (icon) {
-        icon.classList.toggle("fa-bars")
-        icon.classList.toggle("fa-times")
+        const icon = menuToggle.querySelector("i")
+        if (icon) {
+          icon.classList.remove("fa-times")
+          icon.classList.add("fa-bars")
+        }
+        dropdowns.forEach((dropdown) => {
+          dropdown.classList.remove("active")
+          const submenu = dropdown.querySelector(".dropdown-menu")
+          if (submenu) {
+            submenu.style.display = "none"
+          }
+        })
       }
     })
   }
 
-  // Ajustar el menú cuando cambia el tamaño de la ventana
+  dropdowns.forEach((dropdown) => {
+    const link = dropdown.querySelector("a")
+    const submenu = dropdown.querySelector(".dropdown-menu")
+
+    if (link && submenu) {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault()
+          e.stopPropagation()
+          if (submenu.style.display === "block") {
+            submenu.style.display = "none"
+            dropdown.classList.remove("active")
+          } else {
+            dropdowns.forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active")
+                const otherSubmenu = otherDropdown.querySelector(".dropdown-menu")
+                if (otherSubmenu) {
+                  otherSubmenu.style.display = "none"
+                }
+              }
+            })
+            submenu.style.display = "block"
+            dropdown.classList.add("active")
+          }
+        }
+      })
+    }
+  })
+
   window.addEventListener("resize", () => {
     if (mainNav) {
       if (window.innerWidth > 768) {
         mainNav.style.display = "block"
         mainNav.classList.remove("active")
+        dropdowns.forEach((dropdown) => {
+          const submenu = dropdown.querySelector(".dropdown-menu")
+          if (submenu) {
+            submenu.style.removeProperty("display")
+          }
+        })
       } else {
         if (!mainNav.classList.contains("active")) {
           mainNav.style.display = "none"
@@ -181,43 +220,6 @@ function initMobileMenu() {
         icon.classList.remove("fa-times")
         icon.classList.add("fa-bars")
       }
-    }
-  })
-}
-
-function initDropdowns() {
-  const dropdowns = document.querySelectorAll(".dropdown")
-
-  dropdowns.forEach((dropdown) => {
-    const link = dropdown.querySelector("a")
-    const submenu = dropdown.querySelector(".dropdown-menu")
-
-    if (link && submenu) {
-      link.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) {
-          e.preventDefault()
-
-          // Mostrar u ocultar el submenú
-          if (dropdown.classList.contains("active")) {
-            dropdown.classList.remove("active")
-            submenu.style.display = "none"
-          } else {
-            // Cerrar otros submenús abiertos
-            dropdowns.forEach((otherDropdown) => {
-              if (otherDropdown !== dropdown && otherDropdown.classList.contains("active")) {
-                otherDropdown.classList.remove("active")
-                const otherSubmenu = otherDropdown.querySelector(".dropdown-menu")
-                if (otherSubmenu) {
-                  otherSubmenu.style.display = "none"
-                }
-              }
-            })
-
-            dropdown.classList.add("active")
-            submenu.style.display = "block"
-          }
-        }
-      })
     }
   })
 }

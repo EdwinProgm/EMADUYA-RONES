@@ -614,7 +614,47 @@ footer {
     flex-wrap: nowrap;
   }
 
+  /* Add these styles to fix mobile dropdown menu */
+  .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: none !important;
+  }
+
+  body.dark-mode .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .dropdown-menu a {
+    padding: 12px 15px 12px 30px !important;
+    color: var(--primary-color) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  }
+
+  body.dark-mode .dropdown-menu a {
+    color: var(--dark-text) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none !important;
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: block !important;
+  }
+
   .main-nav {
+    display: none;
     width: 100%;
     background-color: #fff;
     position: absolute;
@@ -629,6 +669,10 @@ footer {
 
   body.dark-mode .main-nav {
     background-color: var(--dark-surface);
+  }
+
+  .main-nav.active {
+    display: block;
   }
 
   .main-nav ul {
@@ -653,25 +697,20 @@ footer {
     display: block;
   }
 
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    background-color: rgba(0, 0, 0, 0.05);
-    padding-left: 15px;
+  /* Improve touch targets for mobile */
+  .dropdown > a {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  body.dark-mode .dropdown-menu {
-    background-color: rgba(0, 0, 0, 0.3);
+  .dropdown > a i {
+    transition: transform 0.3s ease;
   }
 
-  .dropdown-menu a {
-    padding: 12px 15px 12px 30px;
-    color: var(--primary-color);
-  }
-
-  body.dark-mode .dropdown-menu a {
-    color: var(--dark-text);
+  .dropdown.active > a i {
+    transform: rotate(180deg);
   }
 
   .main-header .container {
