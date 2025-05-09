@@ -12,12 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (href !== "#" && href !== "#!" && !this.parentElement.classList.contains("dropdown")) {
         e.preventDefault()
-
         const targetElement = document.querySelector(href)
         if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-          })
+          targetElement.scrollIntoView({ behavior: "smooth" })
 
           if (document.querySelector(".main-nav") && window.innerWidth <= 768) {
             const mainNav = document.querySelector(".main-nav")
@@ -37,12 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   const pageLinks = document.querySelectorAll("a[data-page]")
-
   pageLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      if (window.innerWidth <= 768 && this.parentElement.classList.contains("dropdown")) {
-        return
-      }
+    link.addEventListener("click", function () {
+      if (window.innerWidth <= 768 && this.parentElement.classList.contains("dropdown")) return
 
       const pageName = this.getAttribute("data-page")
       const pageUrl = this.getAttribute("href")
@@ -51,9 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return
       }
 
-      document.querySelectorAll(".main-nav a").forEach((navLink) => {
-        navLink.classList.remove("active")
-      })
+      document.querySelectorAll(".main-nav a").forEach((navLink) => navLink.classList.remove("active"))
       this.classList.add("active")
 
       const mainNav = document.querySelector(".main-nav")
@@ -78,6 +70,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 })
+
+function initTheme() {
+  const savedTheme = localStorage.getItem("theme");
+  const themeSwitch = document.getElementById("theme-switch");
+  const logoEmpresa = document.getElementById("logo-header");
+
+  function updateLogo(isDarkMode) {
+    if (logoEmpresa) {
+      logoEmpresa.classList.add("fade-out");
+      setTimeout(() => {
+        logoEmpresa.src = isDarkMode
+          ? "IMG/microcementado/LogoEmpresa.jpeg" 
+          : "IMG/microcementado/logo1.jpg"; 
+        logoEmpresa.classList.remove("fade-out");
+        logoEmpresa.classList.add("fade-in");
+        setTimeout(() => logoEmpresa.classList.remove("fade-in"), 300);
+      }, 150);
+    }
+  }
+
+  const isDarkMode = savedTheme === "dark";
+  if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+    if (themeSwitch) themeSwitch.checked = true;
+  }
+  updateLogo(isDarkMode);
+
+  if (themeSwitch) {
+    themeSwitch.addEventListener("change", () => {
+      const isDark = themeSwitch.checked;
+      document.body.classList.toggle("dark-mode", isDark);
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      updateLogo(isDark);
+    });
+  }
+}
+
 
 function initSlider() {
   const slides = document.querySelectorAll(".slide")
@@ -224,27 +253,6 @@ function initMobileMenu() {
   })
 }
 
-function initTheme() {
-  const savedTheme = localStorage.getItem("theme")
-  const themeSwitch = document.getElementById("theme-switch")
-
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode")
-    if (themeSwitch) themeSwitch.checked = true
-  }
-
-  if (themeSwitch) {
-    themeSwitch.addEventListener("change", () => {
-      if (themeSwitch.checked) {
-        document.body.classList.add("dark-mode")
-        localStorage.setItem("theme", "dark")
-      } else {
-        document.body.classList.remove("dark-mode")
-        localStorage.setItem("theme", "light")
-      }
-    })
-  }
-}
 
 function initStickyHeader() {
   const header = document.getElementById("main-header")
