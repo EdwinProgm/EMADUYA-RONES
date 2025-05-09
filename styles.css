@@ -269,6 +269,17 @@ body.dark-mode .theme-toggle input[type="checkbox"]:checked + .switch {
   transition: max-height 0.3s ease;
 }
 
+#logo-header {
+  max-height: 60px;
+  width: auto;
+  transition: max-height 0.3s ease;
+  display: block;
+}
+
+.main-header.sticky #logo-header {
+  max-height: 50px;
+}
+
 .main-header.sticky .logo img {
   max-height: 50px;
 }

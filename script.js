@@ -74,35 +74,42 @@ document.addEventListener("DOMContentLoaded", () => {
 function initTheme() {
   const savedTheme = localStorage.getItem("theme");
   const themeSwitch = document.getElementById("theme-switch");
-  const logoEmpresa = document.getElementById("logo-header");
+  const logo = document.getElementById("logo-header");
 
-  function updateLogo(isDarkMode) {
-    if (logoEmpresa) {
-      logoEmpresa.classList.add("fade-out");
+  if (!logo) {
+    console.error("Logo element with ID 'logo-header' not found");
+  }
+
+  function updateLogo(isDark) {
+    if (logo) {
+      console.log("Updating logo for theme:", isDark ? "dark" : "light");
+      console.log("Current logo src:", logo.src);
+      logo.classList.add("fade-out");
+
+      const darkLogoPath = "IMG/LogoEmpresa.jpeg";
+      const lightLogoPath = "IMG/logo1.jpg";
+
       setTimeout(() => {
-        logoEmpresa.src = isDarkMode
-          ? "IMG/microcementado/LogoEmpresa.jpeg" 
-          : "IMG/microcementado/logo1.jpg"; 
-        logoEmpresa.classList.remove("fade-out");
-        logoEmpresa.classList.add("fade-in");
-        setTimeout(() => logoEmpresa.classList.remove("fade-in"), 300);
+        logo.src = isDark ? darkLogoPath : lightLogoPath;
+        console.log("New logo src:", logo.src);
+        logo.classList.remove("fade-out");
+        logo.classList.add("fade-in");
+        setTimeout(() => logo.classList.remove("fade-in"), 300);
       }, 150);
     }
   }
-
-  const isDarkMode = savedTheme === "dark";
-  if (isDarkMode) {
+  const isDark = savedTheme === "dark";
+  if (isDark) {
     document.body.classList.add("dark-mode");
     if (themeSwitch) themeSwitch.checked = true;
-  }
-  updateLogo(isDarkMode);
 
+  updateLogo(isDark);
   if (themeSwitch) {
     themeSwitch.addEventListener("change", () => {
-      const isDark = themeSwitch.checked;
-      document.body.classList.toggle("dark-mode", isDark);
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-      updateLogo(isDark);
+      const isDarkMode = themeSwitch.checked;
+      document.body.classList.toggle("dark-mode", isDarkMode);
+      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+      updateLogo(isDarkMode);
     });
   }
 }
