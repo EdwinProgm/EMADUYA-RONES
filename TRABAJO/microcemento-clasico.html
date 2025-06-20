@@ -252,26 +252,6 @@
       </div>
     </div>
 
-    <div class="chatbot-widget" id="chatbot-widget">
-      <div class="chatbot-trigger" id="chatbot-trigger">
-        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Chatbot" />
-        <span class="chatbot-tooltip">¡Hola! Estoy aquí</span> 
-        <span class="chatbot-tooltip">¡Hola! Estoy aquí</span>
-      </div>    
-      <div class="chatbot-window" id="chatbot-window">
-        <div class="chatbot-header">
-          <span>Asistente Virtual</span>
-          <button id="chatbot-close">&times;</button>
-        </div>
-        <div class="chatbot-body">
-          <div class="chat-message bot">Hola 👋 ¿En qué puedo ayudarte?</div>
-        </div>
-        <div class="chatbot-footer">
-          <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje...">
-          <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
-        </div>
-      </div>
-    </div>
 
     <div class="page-loader">
       <div class="loader-spinner"></div>
@@ -287,8 +267,8 @@
           <div class="footer-links">
             <h4>Enlaces rápidos</h4>
             <ul>
-              <li><a href="index.html" data-page="home">Inicio</a></li>
-              <li><a href="productos.html" data-page="productos">Productos</a></li>
+              <li><a href="../index.html" data-page="home">Inicio</a></li>
+              <li><a href="microcemento-clasico.html" data-page="productos">Productos</a></li>
               <li><a href="servicios.html" data-page="servicios">Servicios</a></li>
               <li><a href="contacto.html" data-page="contacto">Contacto</a></li>
             </ul>
@@ -486,52 +466,7 @@
         });
       }
 
-      const chatbotTrigger = document.getElementById("chatbot-trigger");
-      const chatbotWindow = document.getElementById("chatbot-window");
-      const chatbotClose = document.getElementById("chatbot-close");
-      const chatbotSend = document.getElementById("chatbot-send");
-      const chatbotInput = document.getElementById("chatbot-input");
-      const chatbotBody = document.querySelector(".chatbot-body");
 
-      if (chatbotTrigger && chatbotWindow) {
-        chatbotTrigger.addEventListener("click", () => {
-          chatbotWindow.style.display = "flex";
-        });
-      }
-
-      if (chatbotClose && chatbotWindow) {
-        chatbotClose.addEventListener("click", () => {
-          chatbotWindow.style.display = "none";
-        });
-      }
-
-      if (chatbotSend && chatbotInput && chatbotBody) {
-        chatbotSend.addEventListener("click", sendMessage);
-        chatbotInput.addEventListener("keydown", (e) => {
-          if (e.key === "Enter") sendMessage();
-        });
-
-        function sendMessage() {
-          const message = chatbotInput.value.trim();
-          if (message !== "") {
-            const userMsg = document.createElement("div");
-            userMsg.className = "chat-message";
-            userMsg.textContent = message;
-            chatbotBody.appendChild(userMsg);
-
-            setTimeout(() => {
-              const botMsg = document.createElement("div");
-              botMsg.className = "chat-message bot";
-              botMsg.textContent = "Gracias por tu mensaje, en breve te responderemos.";
-              chatbotBody.appendChild(botMsg);
-              chatbotBody.scrollTop = chatbotBody.scrollHeight;
-            }, 500);
-
-            chatbotInput.value = "";
-            chatbotBody.scrollTop = chatbotBody.scrollHeight;
-          }
-        }
-      }
     }
 // Add responsive adjustments for gallery items
 window.addEventListener('resize', function() {
@@ -553,5 +488,21 @@ window.addEventListener('resize', function() {
 
 window.dispatchEvent(new Event('resize'));
   </script>
+  <script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6852cdbc9fa9ed67b0059e70' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
 </body>
 </html>
